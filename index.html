@@ -1,32 +1,302 @@
-<html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manchester United - Red Devils</title>
+  
+  <!-- Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
-  
-  p{
-  background-image: radial-gradient(rgb(255,255,255), rgb(244,0,0));
-  }
-     body{
-         text-align: center;
-         background-image: radial-gradient(rgb(255,0,0), rgb(0,0,0));
-         min-width: 100%;
-         min-height: 100%;
+    body {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      background-image: radial-gradient(rgb(255, 0, 0), rgb(0, 0, 0));
+      color: white;
+      min-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-size: 400% 400%;
+      animation: gradientBackground 15s ease infinite;
+    }
+
+    /* Keyframe for the animated background gradient */
+    @keyframes gradientBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Navigation Bar Styles */
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      animation: fadeIn 2s ease-out;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: rgb(244, 0, 0);
+      transform: scale(1.1);
+    }
+
+    h1, h2 {
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 50px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 20px 0;
+    }
+
+    /* Surrounding Text with Dark Red Background */
+    .text-container {
+      background-color: rgba(139, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      margin: 30px auto;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      animation: slideIn 2s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    p {
+      background-image: radial-gradient(rgb(255, 255, 255), rgb(244, 0, 0));
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    p:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 40%;
+      border-radius: 10px;
+      margin-top: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    img:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    iframe {
+      margin-top: 20px;
+      border: none;
+      max-width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    iframe:hover {
+      transform: scale(1.05);
+    }
+
+    .video-container {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    /* Back to Top Button Styles */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgb(244, 0, 0);
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-to-top:hover {
+      background-color: rgb(255, 0, 0);
+      transform: scale(1.1);
+    }
+
+    /* Best Players Section */
+    .best-players {
+      margin-top: 50px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      margin: 50px auto;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 3s ease-out;
+    }
+
+    .best-players h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .best-players p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    /* Manchester United Links Section */
+    .links {
+      margin-top: 50px;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      margin: 50px auto;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .links a {
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin: 15px 0;
+      display: block;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .links a:hover {
+      color: rgb(244, 0, 0);
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
       }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        width: 90%;
+        font-size: 1rem;
+      }
+
+      img {
+        width: 60%;
+      }
+    }
   </style>
-  
 </head>
 
 <body>
-<h1>Red Devils</h1>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#players">Best Players</a></li>
+      <li><a href="#links">Links</a></li>
+    </ul>
+  </nav>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A7OD0guKW7Q?si=IRiVofez4roUMVou" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<h2>
-Manchester United's History
-</h2>
-<p>
-Manchester United's 1998–99 season was the most successful in English club football history as they became the first team to win the Premier League, FA Cup and UEFA Champions League – "The Treble" – in the same season. Losing 1–0 going into injury time in the 1999 UEFA Champions League Final, Teddy Sheringham and Ole Gunnar Solskjær scored late goals to claim a dramatic victory over Bayern Munich, in what is considered one of the greatest comebacks of all time. The club then became the only British team to ever win the Intercontinental Cup after beating Palmeiras 1–0 in Tokyo. Ferguson was subsequently knighted for his services to football.
-</p>
+  <!-- Home Section -->
+  <div id="home">
+    <h1>Red Devils</h1>
+  </div>
+
+  <!-- Video Section -->
+  <div id="video" class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/A7OD0guKW7Q?si=IRiVofez4roUMVou" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+
+  <!-- Manchester United Image -->
+  <div id="history">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Manchester_United_FC_logo.svg" alt="Manchester United Logo">
+  </div>
+
+  <!-- History Section -->
+  <div class="text-container">
+    <p>
+      Manchester United's 1998–99 season was the most successful in English club football history as they became the first team to win the Premier League, FA Cup and UEFA Champions League – "The Treble" – in the same season. Losing 1–0 going into injury time in the 1999 UEFA Champions League Final, Teddy Sheringham and Ole Gunnar Solskjær scored late goals to claim a dramatic victory over Bayern Munich, in what is considered one of the greatest comebacks of all time. The club then became the only British team to ever win the Intercontinental Cup after beating Palmeiras 1–0 in Tokyo. Ferguson was subsequently knighted for his services to football.
+    </p>
+  </div>
+
+  <!-- Best Players Section -->
+  <div id="players" class="best-players">
+    <h3>Manchester United's Best Players</h3>
+    <p>Manchester United has seen some of the best footballers in the world grace their pitch over the years. Some of the most iconic players include:</p>
+    <ul>
+      <li><strong>George Best</strong> - Known for his incredible dribbling skills and ability to score amazing goals, George Best is regarded as one of the best footballers to ever play the game.</li>
+      <li><strong>Eric Cantona</strong> - The enigmatic French forward who became a cult hero for his leadership and flair on the pitch, playing a key role in United's dominance in the 1990s.</li>
+      <li><strong>Ryan Giggs</strong> - A one-club man, Giggs played over 800 matches for United, winning 13 Premier League titles and 2 Champions League trophies, making him one of the most decorated footballers in history.</li>
+      <li><strong>Cristiano Ronaldo</strong> - Ronaldo's talent and work ethic made him a global superstar. He helped United win multiple titles before moving to Real Madrid and later returned to contribute to the club's successes once again.</li>
+      <li><strong>Wayne Rooney</strong> - As the club's all-time top scorer, Rooney was a pivotal figure for Manchester United, known for his passion, determination, and ability to score crucial goals.</li>
+    </ul>
+  </div>
+
+  <!-- Links Section (Official Website and Store) -->
+  <div id="links" class="links">
+    <h3>Official Manchester United Links</h3>
+    <a href="https://www.manutd.com" target="_blank">Visit the Official Manchester United Website</a>
+    <a href="https://store.manutd.com" target="_blank">Shop at the Official Manchester United Store</a>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+  <script>
+    // Show the "Back to Top" button when the user scrolls down
+    window.onscroll = function() {
+      let button = document.querySelector('.back-to-top');
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    };
+  </script>
 </body>
-
-</html>
 </html>
